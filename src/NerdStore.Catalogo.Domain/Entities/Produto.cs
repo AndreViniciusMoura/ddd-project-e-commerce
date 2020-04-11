@@ -14,6 +14,8 @@ namespace NerdStore.Catalogo.Domain.Entities
         public DateTime DataCadastro { get; private set; }
         public string Imagem { get; private set; }
         public int QtdEstoque { get; private set; }
+
+        public Dimensoes Dimensoes{ get; private set; }
         public Categoria Categoria { get; private set; }
 
         #region Foreign Key
@@ -26,7 +28,7 @@ namespace NerdStore.Catalogo.Domain.Entities
 
         #region Construtor
 
-        public Produto(string nome, string descricao, bool ativo, decimal valor, Guid categoriaId, DateTime dataCadastro, string imagem, int qtdEstoque)
+        public Produto(string nome, string descricao, bool ativo, decimal valor, Guid categoriaId, DateTime dataCadastro, string imagem, Dimensoes dimensoes)
         {
             CategoriaId = categoriaId;
             Nome = nome;
@@ -35,6 +37,7 @@ namespace NerdStore.Catalogo.Domain.Entities
             Valor = valor;
             DataCadastro = dataCadastro;
             Imagem = imagem;
+            Dimensoes = dimensoes;
 
             Validar();
         }

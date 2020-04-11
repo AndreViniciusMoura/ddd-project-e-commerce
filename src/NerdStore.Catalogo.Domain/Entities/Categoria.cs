@@ -1,4 +1,5 @@
 ﻿using NerdStore.Core.DomainObjects;
+using System.Collections.Generic;
 
 namespace NerdStore.Catalogo.Domain.Entities
 {
@@ -9,14 +10,23 @@ namespace NerdStore.Catalogo.Domain.Entities
         public string Nome { get; private set; }
         public int Codigo { get; private set; }
 
+        //EF Relation
+        public ICollection<Produto> Produtos { get; set; }
+
         #endregion
 
         #region Construtor
+
+        public Categoria()
+        {
+            Produtos = new List<Produto>();
+        }
 
         public Categoria(string nome, int codigo)
         {
             Nome = nome;
             Codigo = codigo;
+            Produtos = new List<Produto>();
 
             Validar();
         }
