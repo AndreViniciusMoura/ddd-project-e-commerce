@@ -71,6 +71,11 @@ namespace NerdStore.Catalogo.Domain.Entities
             QtdEstoque += quantidade;
         }
 
+        public void ReporEstoque(int quantidade)
+        {
+            QtdEstoque += quantidade;
+        }
+
         public bool PossuiEstoque(int quantidade)
         {
             return QtdEstoque >= quantidade;
