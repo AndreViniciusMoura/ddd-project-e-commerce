@@ -9,28 +9,14 @@ namespace NerdStore.Catalogo.Domain.Interfaces.Repositories
 {
     public interface IProdutoRepository : IRepository<Produto>
     {
-        Task<IEnumerable<Produto>> ObterTodos();
-
-        Task<Produto> ObterPorId(Guid id);
-
-        Task<IEnumerable<Categoria>> ObterCategorias();
-
-        Task<IEnumerable<Produto>> ObterPorCategoria(int codigo);
-
-        #region Produto
-
         void Adicionar(Produto produto);
 
         void Atualizar(Produto produto);
 
-        #endregion
+        Task<IEnumerable<Produto>> ObterTodos();
 
-        #region Categoria
+        Task<Produto> ObterPorId(Guid id);
 
-        void Adicionar(Categoria categoria);
-
-        void Atualizar(Categoria categoria);
-
-        #endregion
+        Task<IEnumerable<Produto>> ObterPorCategoria(int codigo);
     }
 }

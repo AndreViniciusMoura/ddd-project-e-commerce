@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NerdStore.Catalogo.Domain.Services
 {
-    class CategoriaService : ICategoriaService, IDisposable
+    public class CategoriaService : ICategoriaService, IDisposable
     {
         #region Propriedades
 

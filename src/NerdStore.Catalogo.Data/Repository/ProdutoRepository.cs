@@ -30,6 +30,16 @@ namespace NerdStore.Catalogo.Data.Repository
 
         #region Metodos
 
+        public void Adicionar(Produto produto)
+        {
+            _catalogoContext.Produtos.Add(produto);
+        }
+
+        public void Atualizar(Produto produto)
+        {
+            _catalogoContext.Produtos.Update(produto);
+        }
+
         #region Consultas
 
         public async Task<IEnumerable<Produto>> ObterTodos()
@@ -47,45 +57,12 @@ namespace NerdStore.Catalogo.Data.Repository
             return await _catalogoContext.Produtos.AsNoTracking().Include(p => p.Categoria).Where(c => c.Categoria.Codigo == codigo).ToListAsync();
         }
 
-        public async Task<IEnumerable<Categoria>> ObterCategorias()
-        {
-            return await _catalogoContext.Categorias.AsNoTracking().ToListAsync();
-        }
-
         #endregion
-
-        #region Produto
-
-        public void Adicionar(Produto produto)
-        {
-            _catalogoContext.Produtos.Add(produto);
-        }
-
-        public void Atualizar(Produto produto)
-        {
-            _catalogoContext.Produtos.Update(produto);
-        }
-
-        #endregion
-
-        #region Categoria
-
-        public void Adicionar(Categoria categoria)
-        {
-            _catalogoContext.Categorias.Add(categoria);
-        }
-
-        public void Atualizar(Categoria categoria)
-        {
-            _catalogoContext.Categorias.Update(categoria);
-        }
 
         public void Dispose()
         {
             _catalogoContext?.Dispose();
         }
-
-        #endregion
 
         #endregion
     }

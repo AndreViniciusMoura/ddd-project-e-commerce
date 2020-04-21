@@ -28,6 +28,8 @@ namespace NerdStore.Catalogo.Domain.Entities
 
         #region Construtor
 
+        protected Produto() { }
+
         public Produto(string nome, string descricao, bool ativo, decimal valor, Guid categoriaId, DateTime dataCadastro, string imagem, Dimensoes dimensoes)
         {
             CategoriaId = categoriaId;
