@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace NerdStore.Catalogo.Domain.Entities
 {
-    public class Categoria : Entity
+    public class Categoria : Entity, IAggregateRoot
     {
         #region Propriedades
 
