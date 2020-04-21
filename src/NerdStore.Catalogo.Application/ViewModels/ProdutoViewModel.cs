@@ -33,7 +33,7 @@ namespace NerdStore.Catalogo.Application.ViewModels
 
         [Range(1, int.MaxValue, ErrorMessage = "O campo {0} precisa ter o valor mínimo de {1}")]
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        public int QuantidadeEstoque { get; set; }
+        public int QtdEstoque { get; set; }
 
         [Range(1, int.MaxValue, ErrorMessage = "O campo {0} precisa ter o valor mínimo de {1}")]
         [Required(ErrorMessage = "O campo {0} é obrigatório")]

@@ -1,8 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 using NerdStore.Catalogo.Application.Services;
 using NerdStore.Catalogo.Application.Services.Interfaces;
 using NerdStore.Catalogo.Data;
 using NerdStore.Catalogo.Data.Repository;
+using NerdStore.Catalogo.Domain.Events;
 using NerdStore.Catalogo.Domain.Interfaces.Repositories;
 using NerdStore.Catalogo.Domain.Interfaces.Services;
 using NerdStore.Catalogo.Domain.Services;
@@ -53,6 +55,13 @@ namespace NerdStore.WebApp.MVC.Setup
             services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 
             #endregion
+
+            #region Events
+
+            services.AddScoped<INotificationHandler<ProdutoAbaixoEstoqueEvent>, ProdutoEventHandler>();
+
+            #endregion
+
 
             #endregion
 
